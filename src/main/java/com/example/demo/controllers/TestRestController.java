@@ -17,9 +17,17 @@ public class TestRestController {
         return list;
     }
 
-    @GetMapping("/POST/{id}")
-    public void onPost(@PathVariable String id){
-        list.add(id);
+    @GetMapping("/GET/SPECIFIC/{s}")
+    public String onGetSpecific(@PathVariable String s){
+        if(list.contains(s)){
+            return list.get(list.indexOf(s));
+        }
+        return "false";
+    }
+
+    @GetMapping("/POST/{s}")
+    public void onPost(@PathVariable String s){
+        list.add(s);
         System.out.println("Something was added to the list");
     }
 
