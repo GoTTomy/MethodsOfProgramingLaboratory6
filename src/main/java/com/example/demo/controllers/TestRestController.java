@@ -25,19 +25,19 @@ public class TestRestController {
         return "false";
     }
 
-    @GetMapping("/POST/{s}")
+    @PostMapping("{s}")
     public void onPost(@PathVariable String s){
         list.add(s);
         System.out.println("Something was added to the list");
     }
 
-    @GetMapping("DELETE/{s}")
+    @DeleteMapping("{s}")
     public void onDelete(@PathVariable  String s){
         list.remove(s);
         System.out.println("Sth was removed from the list");
     }
 
-    @GetMapping("PUT/{s}/{x}")
+    @PutMapping("{s}/{x}")
     public void onPut(@PathVariable String s,@PathVariable String x){
         if(list.contains(s)) {
             int index = list.indexOf(s);

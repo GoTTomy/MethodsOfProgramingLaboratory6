@@ -13,13 +13,13 @@ public class Car {
 
     @Autowired
     @Qualifier("Engine")
-    Engine engine;
+    public Engine engine;
 
     @Autowired
-    Suspension suspension;
+    public Suspension suspension;
 
     public boolean drive(){
-        if(engine.work() == 1 && suspension.work() == 1) {
+        if("1".equals(String.valueOf(engine.work())) && "1".equals(String.valueOf(suspension.work()))) {
             System.out.println("Car is now driving.");
             return true;
         }
